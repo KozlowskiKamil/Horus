@@ -14,13 +14,15 @@ public class WallTest {
 
     private List<Block> blocks;
     private Wall wall;
+    private BlockFactory blockFactory;
 
     @BeforeEach
     public void setUp() {
         blocks = new ArrayList<>();
-        blocks.add(new ConcreteBlock("Red", "Wood"));
-        blocks.add(new ConcreteBlock("Blue", "Metal"));
-        blocks.add(new ConcreteBlock("Green", "Metal"));
+        blockFactory = new BlockFactory();
+        blocks.add(blockFactory.createConcreteBlock("Red", "Wood"));
+        blocks.add(blockFactory.createConcreteBlock("Blue", "Metal"));
+        blocks.add(blockFactory.createConcreteBlock("Green", "Metal"));
         wall = new Wall(blocks);
     }
 
