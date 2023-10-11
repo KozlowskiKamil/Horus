@@ -36,12 +36,7 @@ The `getMaterial` method is similar to `getColor`, but it retrieves the material
 
 The project includes a set of unit tests that validate the correctness of the implemented methods in the `Wall` class. These tests cover all aspects of the required functionality and are a critical part of the application.
 
-## Conclusion
+## Contact
 
-The README.md file provides a detailed explanation of the implemented methods in the `Wall` class. The focus is on the behavior of each method, input, output, and handling of edge cases. After implementing the methods and running the tests, please submit your solution as part of the recruitment task.
-
-Good luck, and we look forward to your submission!
-
----
-
-This README.md file highlights the methods of the `Wall` class, explaining their purpose, expected behavior, and how to handle different scenarios. It provides clarity and serves as a reference for both the candidate and the recruiter.
+If you have any questions or feedback, feel free to contact us at [Kozlowski Kamil](mailto:kozlowski.kamil2k@gmail.com).
+[Portfolio](https://kozlowskikamil.github.io/)
