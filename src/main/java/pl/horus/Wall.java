@@ -1,10 +1,11 @@
 package pl.horus;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
-public class Wall implements Structure {
+public class Wall implements Structure, CompositeBlock {
+
     private List<Block> blocks;
 
     public Wall(List<Block> blocks) {
@@ -13,27 +14,43 @@ public class Wall implements Structure {
 
     @Override
     public Optional<Block> findBlockByColor(String color) {
-        for (Block block : blocks) {
-            if (block.getColor().equals(color)) {
-                return Optional.of(block);
-            }
-        }
-        return Optional.empty();
+        return blocks.stream()
+                .filter(block -> block.getColor().equals(color))
+                .findFirst();
     }
 
     @Override
     public List<Block> findBlocksByMaterial(String material) {
-        List<Block> matchingBlocks = new ArrayList<>();
-        for (Block block : blocks) {
-            if (block.getMaterial().equals(material)) {
-                matchingBlocks.add(block);
-            }
-        }
-        return matchingBlocks;
+        return blocks.stream()
+                .filter(block -> block.getMaterial().equals(material))
+                .collect(Collectors.toList());
     }
 
     @Override
     public int count() {
         return blocks.size();
+    }
+
+    @Override
+    public List<Block> getBlocks() {
+        return blocks;
+    }
+
+    @Override
+    public String getColor() {
+        if (!blocks.isEmpty()) {
+            return blocks.get(0).getColor();
+        } else {
+            return "No color";
+        }
+    }
+
+    @Override
+    public String getMaterial() {
+        if (!blocks.isEmpty()) {
+            return blocks.get(0).getMaterial();
+        } else {
+            return "Lack of material";
+        }
     }
 }
