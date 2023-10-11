@@ -39,4 +39,5 @@ The project includes a set of unit tests that validate the correctness of the im
 ## Contact
 
 If you have any questions or feedback, feel free to contact us at [Kozlowski Kamil](mailto:kozlowski.kamil2k@gmail.com).
+
 [Portfolio](https://kozlowskikamil.github.io/)
